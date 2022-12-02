@@ -21,19 +21,17 @@ function listTitles(shelfName) {
 }
 
 function searchShelf(shelfName, name) {
-  var loop = true
   for (i = 0; i < shelfName.length; i++) {
-    var book = ""
-    book += shelfName[i].title
+    var book = []
+    book.push(shelfName[i].title)
+  }
+  for (i = 0; i < shelfName.length; i++) {
     if (book.includes(name)) {
       return true
     } else {
-      loop = false
+      return false
     }
   }
-  if (loop === false) {
-    return loop;
-  };
 }
 
 module.exports = {
